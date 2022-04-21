@@ -50,7 +50,6 @@ public class makeKeyword {
                     if(docChildNode.getNodeType() == Node.ELEMENT_NODE){
                         Element ele = (Element)docChildNode;
                         String nodeName = ele.getNodeName();
-                        //System.out.println("node name : " + nodeName);
                         if(nodeName.equals("title")){
                             getTags[docId][0] = ele.getTextContent();
                         }else if(nodeName.equals("body")){
@@ -62,13 +61,6 @@ public class makeKeyword {
                     }
                 }
             }
-
-            /*for(int i = 0; i < getTags.length; i++){
-                for(int j = 0; j < getTags[0].length; j++){
-                    System.out.print(getTags[i][j] + " ");
-                }
-                System.out.println();
-            }*/
 
         }catch(Exception e){
             System.out.println(e);
@@ -93,9 +85,6 @@ public class makeKeyword {
                 String getTitle = getTags[i][0];
                 String getBody = getTags[i][1];
 
-                //System.out.println("title: " +  getTitle);
-                //System.out.println("p : "+ getBody);
-
                 Element doc = document.createElement("doc");
                 Element title = document.createElement("title");
                 Element body = document.createElement("body");
@@ -115,8 +104,6 @@ public class makeKeyword {
             StreamResult result = new StreamResult(new FileOutputStream(new File("./index.xml")));
 
             transformer.transform(src, result);
-
-            //System.out.println("XML파일 작성을 종료합니다.");
 
         }catch (Exception e){
             System.out.println(e);

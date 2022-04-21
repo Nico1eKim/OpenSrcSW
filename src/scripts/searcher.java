@@ -97,7 +97,6 @@ public class searcher {
     }
 
     public ArrayList<String> innerProduct() throws IOException, ClassNotFoundException {
-        //ArrayList <ArrayList<String>> wordTF = new ArrayList<>();
         KeywordExtractor ke = new KeywordExtractor();
         KeywordList kl = ke.extractKeyword(this.query, true);
         ArrayList <String> wordAL = new ArrayList<>();
