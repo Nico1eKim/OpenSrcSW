@@ -22,6 +22,7 @@ import java.io.FileOutputStream;
 public class makeCollection {
 
     String fileDir;
+    
     public makeCollection(String fileDir){
         this.fileDir = fileDir;
     }
